@@ -1,6 +1,7 @@
 # CMS EFT Workshop Hands-on tutorial
 
 This is a companion repository for CMS EFT workshop at LPC tutorial.
+The tutorial is aimed at graduate students and other researchers who are interested in including an EFT interpretation in their analysis.
 
 ## Setup
 
@@ -20,15 +21,50 @@ The first section of the tutorial will discuss generating samples of events
 with [Madgraph](https://launchpad.net/mg5amcnlo) and
 [SMEFTsim](https://smeftsim.github.io/), with weights embedded per-event to
 allow reweighting the samples to alternative points in EFT coefficient space.
+For this exercise we will generate a $t\bar{t}$ semileptonic sample with one extra jet. 
 
 To start, from the main area of this repository, run
 ```bash
 cd generation
-./setup.sh
+. setup.sh
+```
+this sets up the CMS [genproductions](https://github.com/cms-sw/genproductions) git repository
+and a local copy of `CMSSW_10_6_27` with additional NanoGEN tools to record EFT weights.
+
+<details>
+<summary>Alternative: setup without CMSSW, using LCG</summary>
+LCG stack with MG+Pythia+Delphes
+</details>
+
+<details>
+<summary>Alternative: other UFO models for EFT parameterization</summary>
+Alternative generators include SMEFT@NLO, Dim6Top, etc.
+  These can be installed using...
+</details>
+
+### Creating the gridpack
+We will start by creating a gridpack
+
+Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
+```bash
+cd addons/models
+```
+Take a look at param_card.dat and vertices.py/couplings.py
+```bash
+cd addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
+```
+To run locally,
+```bash
+./gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
 ```
 
-### Editing the process card
-Etc.
+<details>
+<summary>Alternative: run on condor</summary>
+Condor gridpack generation works for lxplus (and LPC?) but may not work at your local cluster, depending on your cluster's batch setup. You could use CMS connect as well (link)
+```bash
+nohup ./submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial > TT01j_tutorial.log
+```
+</details>
 
 ## Histograms
 
@@ -38,7 +74,7 @@ and make selections and store EFT-aware histograms.
 To start, from the main area of this repository, run
 ```bash
 cd histograms
-./setup.sh
+. setup.sh
 ```
 
 ## Statistics
@@ -50,5 +86,5 @@ template histograms and run fits using the
 To start, from the main area of this repository, run
 ```bash
 cd statistics
-./setup.sh
+. setup.sh
 ```
