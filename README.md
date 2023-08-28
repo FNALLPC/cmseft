@@ -25,6 +25,8 @@ For this exercise we will generate a $t\bar{t}$ semileptonic sample with one ext
 
 To start, from the main area of this repository, run
 ```bash
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+export SCRAM_ARCH=slc7_amd64_gcc700
 voms-proxy-init -voms cms -valid 192:00
 cd generation
 . setup.sh
