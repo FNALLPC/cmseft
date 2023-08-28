@@ -57,6 +57,12 @@ Take a look at TT01j_tutorial_proc_card.dat and TT01j_tutorial_reweight_card.dat
 ```bash
 cd addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
 ```
+Let's take a look at some diagrams
+```bash
+ cd ../../../../
+ ./diagram_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
+```
+
 To run locally,
 ```bash
 ./gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
