@@ -25,6 +25,7 @@ For this exercise we will generate a $t\bar{t}$ semileptonic sample with one ext
 
 To start, from the main area of this repository, run
 ```bash
+voms-proxy-init -voms cms -valid 192:00
 cd generation
 . setup.sh
 ```
@@ -47,9 +48,12 @@ We will start by creating a gridpack
 
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
-cd addons/models
+mkdir -pv addons/models/SMEFTsim_topU3l_MwScheme_UFO
+cd addons/models/SMEFTsim_topU3l_MwScheme_UFO
 ```
-Take a look at param_card.dat and vertices.py/couplings.py
+
+Add all files from https://github.com/HephyAnalysisSW/genproductions/tree/mg265UL/bin/MadGraph5_aMCatNLO/addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial under a folder “TT01j_tutorial”
+Take a look at TT01j_tutorial_proc_card.dat and TT01j_tutorial_reweight_card.dat
 ```bash
 cd addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
 ```
