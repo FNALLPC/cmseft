@@ -52,7 +52,7 @@ mkdir -pv addons/models/SMEFTsim_topU3l_MwScheme_UFO
 cd addons/models/SMEFTsim_topU3l_MwScheme_UFO
 ```
 
-Add all files from https://github.com/HephyAnalysisSW/genproductions/tree/mg265UL/bin/MadGraph5_aMCatNLO/addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial under a folder “TT01j_tutorial”
+Add all files from [here(]https://github.com/HephyAnalysisSW/genproductions/tree/mg265UL/bin/MadGraph5_aMCatNLO/addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial) under a folder “TT01j_tutorial”
 Take a look at TT01j_tutorial_proc_card.dat and TT01j_tutorial_reweight_card.dat
 ```bash
 cd addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
