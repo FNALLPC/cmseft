@@ -48,6 +48,8 @@ We will start by creating a gridpack
 
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
+cp diagram_generation.sh genproductions/bin/MadGraph5_aMCatNLO/
+cd genproductions/bin/MadGraph5_aMCatNLO/
 mkdir -pv addons/models/SMEFTsim_topU3l_MwScheme_UFO
 cd addons/models/SMEFTsim_topU3l_MwScheme_UFO
 ```
