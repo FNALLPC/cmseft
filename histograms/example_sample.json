@@ -1,0 +1,12 @@
+{
+  "xsec": 831.76,
+  "year": "2017",
+  "treeName": "Events",
+  "histAxisName": "ttbar",
+  "options": "",
+  "files": [
+    "nanogen_small.root"
+  ],
+  "nSumOfWeights": 1542.0,
+  "isData": false
+}
