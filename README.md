@@ -52,8 +52,10 @@ Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gri
 ```bash
 cp diagram_generation.sh genproductions/bin/MadGraph5_aMCatNLO/
 cd genproductions/bin/MadGraph5_aMCatNLO/
-mkdir -pv addons/models/SMEFTsim_topU3l_MwScheme_UFO
-cd addons/models/SMEFTsim_topU3l_MwScheme_UFO
+mkdir -pv addons/models/
+wget https://feynrules.irmp.ucl.ac.be/raw-attachment/wiki/SMEFT/SMEFTsim_topU3l_MwScheme_UFO.tar.gz
+tar -xvzf SMEFTsim_topU3l_MwScheme_UFO.tar.gz
+cd SMEFTsim_topU3l_MwScheme_UFO
 ```
 
 Add all files from [here](https://github.com/HephyAnalysisSW/genproductions/tree/mg265UL/bin/MadGraph5_aMCatNLO/addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial) under a folder “TT01j_tutorial”
