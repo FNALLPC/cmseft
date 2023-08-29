@@ -58,9 +58,10 @@ tar -xvzf SMEFTsim_topU3l_MwScheme_UFO.tar.gz
 cd SMEFTsim_topU3l_MwScheme_UFO
 ```
 
-Add all files from [here](https://github.com/HephyAnalysisSW/genproductions/tree/mg265UL/bin/MadGraph5_aMCatNLO/addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial) under a folder “TT01j_tutorial”
+Create a cards folder and add all files from [here](https://github.com/HephyAnalysisSW/genproductions/tree/mg265UL/bin/MadGraph5_aMCatNLO/addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial) under a folder “TT01j_tutorial”
 Take a look at TT01j_tutorial_proc_card.dat and TT01j_tutorial_reweight_card.dat
 ```bash
+mkdir -pv addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
 cd addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
 ```
 Let's take a look at some diagrams
