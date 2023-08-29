@@ -1,0 +1,9 @@
+et param_card LambdaSMEFT 1.000000e+03
+
+set param_card SMEFT 11 1.0e-10
+set param_card SMEFT 44 1.0e-10
+set param_card SMEFT 45 1.0e-10
+set param_card SMEFT 48 1.0e-10
+set param_card SMEFT 72 1.0e-10
+set param_card SMEFT 73 1.0e-10
+set param_card SMEFTcpv 20 1.0e-10
