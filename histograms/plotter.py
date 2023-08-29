@@ -1,6 +1,7 @@
 import os
 import pickle
 import gzip
+import argparse
 import matplotlib.pyplot as plt
 import topcoffea.modules.utils as utils
 
@@ -46,7 +47,11 @@ def make_single_fig(histo):
 
 def main():
 
-    histo_in = "histos_nanogen_small.pkl"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_histo_file")
+    args = parser.parse_args()
+
+    histo_in = args.input_histo_file
 
     # Get the histograms
     hin_dict = pickle.load(gzip.open(histo_in))
@@ -56,8 +61,8 @@ def main():
     variable = "ht"
     histo = hin_dict[variable]
 
-    # Print values
-    print("\nValues:",histo.eval(None))
+    # Print some values
+    print("\nValues: SM",histo.eval(None))
     print("\nValues EFT:",histo.eval(WCPT_EXAMPLES["nonsm"]))
 
     # Make plots at a few wc points
