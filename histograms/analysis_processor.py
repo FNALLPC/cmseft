@@ -5,6 +5,10 @@ np.seterr(divide='ignore', invalid='ignore', over='ignore')
 from coffea import processor
 from coffea.analysis_tools import PackedSelection
 
+# silence warnings due to using NanoGEN instead of full NanoAOD
+from coffea.nanoevents import NanoAODSchema
+NanoAODSchema.warn_missing_crossrefs = False
+
 import hist
 from topcoffea.modules.histEFT import HistEFT
 

@@ -3,6 +3,10 @@ import json
 import argparse
 from coffea.nanoevents import NanoEventsFactory
 
+# silence warnings due to using NanoGEN instead of full NanoAOD
+from coffea.nanoevents import NanoAODSchema
+NanoAODSchema.warn_missing_crossrefs = False
+
 from topcoffea.scripts.make_html import make_html
 from topcoffea.modules import utils
 import topcoffea.modules.quad_fit_tools as qft
