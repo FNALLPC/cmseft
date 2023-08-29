@@ -3,8 +3,8 @@
 # Set up the environment
 unset PYTHONPATH # To avoid conflicts 
 
-if [ ! -x "$(command -v mamba)" ]; then
-  if [ ! -x "$(command -v conda)" ]; then
+if ! which mamba 2>/dev/null; then
+  if ! which conda 2>/dev/null; then
     echo "Conda not found, please install mambaforge by following the instructions"
     echo " at https://github.com/conda-forge/miniforge#install"
   else
