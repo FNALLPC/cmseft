@@ -46,7 +46,7 @@ Alternative generators include SMEFT@NLO, Dim6Top, etc.
 </details>
 
 ### Creating the gridpack
-We will start by creating a gridpack
+We will start by creating a gridpack. Start in a fresh terminal window.
 
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
