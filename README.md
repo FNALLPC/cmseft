@@ -140,6 +140,8 @@ Run
 text2workspace.py signal_region_card.txt --X-allow-no-background -P HiggsAnalysis.CombinedLimit.InterferenceModels:interferenceModel \
   --PO verbose --PO scalingData=scaling.pkl.gz -o workspace.root
 ```
+which implements the [interferenceModel](https://github.com/cms-analysis/HiggsAnalysis-CombinedLimit/blob/interference/docs/part2/physicsmodels.md#multi-process-interference)
+physics model in combine using the scaling data constructed at the end of the previous section.
 
 ### Running fits and scans
 ```
