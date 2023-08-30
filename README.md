@@ -114,6 +114,13 @@ To explore the output histogram (from the running the processor step), you can t
 python plotter.py histos.pkl.gz
 ```
 
+### Saving templates for use with combine
+Before going to the next section, run
+```bash
+./dump_templates.py histos.pkl.gz
+```
+which will write two files into `../statistics/` directory for use with the next section.
+
 ## Statistics
 
 This section of the tutorial will demonstrate how to build a model from the
@@ -125,3 +132,58 @@ To start, from the main area of this repository, run
 cd statistics
 . setup.sh
 ```
+
+### Creating a workspace with per-bin morphing
+
+Run
+```bash
+text2workspace.py signal_region_card.txt --X-allow-no-background -P HiggsAnalysis.CombinedLimit.InterferenceModels:interferenceModel \
+  --PO verbose --PO scalingData=scaling.pkl.gz -o workspace.root
+```
+
+### Running fits and scans
+```
+combine -M MultiDimFit workspace.root --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe \
+  --redefineSignalPOIs cHt,ctGRe --setParameters cHt=0,ctGRe=0 --algo singles
+```
+
+Do some scans too...
+
+### PCA
+Run
+```bash
+combine -M MultiDimFit workspace.root --skipInitialFit --robustHesse 1
+```
+which computes the Hessian of the likelihood at the initial point. Since we have an Asimov dataset, this
+initial point should be a global minimum, and we can use it to understand what, if any, degeneracies in the parameters
+exist at this point. The command will output a file we can look at
+```
+$ root -l robustHesseTest.root
+root [0]
+Attaching file robustHesseTest.root as _file0...
+(TFile *) 0x4716940
+root [1] TMatrixDSymEigen eig(*hessian);
+root [2] eig.GetEigenValues().Print()
+
+Vector (16)  is as follows
+
+     |        1  |
+------------------
+   0 |0.838318
+   1 |0.573909
+   2 |0.380058
+   3 |0.263561
+   4 |0.221969
+   5 |0.19812
+   6 |0.196478
+   7 |0.195322
+   8 |0.0850279
+   9 |0.0776739
+  10 |0.0650077
+  11 |0.040883
+  12 |0.0227485
+  13 |0.00564541
+  14 |0.00187942
+  15 |0.00125546
+```
+but this includes both the POIs as well as the BB-lite nuisance parameters. We need to get the _profile hessian_ to know what the POIs constraint is.
