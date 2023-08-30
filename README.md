@@ -32,7 +32,7 @@ cd generation
 . setup.sh
 ```
 this sets up the CMS [genproductions](https://github.com/cms-sw/genproductions) git repository
-and a local copy of `CMSSW_10_6_27` with additional NanoGEN tools to record EFT weights.
+and a local copy of `CMSSW_10_6_26` with additional NanoGEN tools to record EFT weights.
 
 <details>
 <summary>Alternative: setup without CMSSW, using LCG</summary>
@@ -84,6 +84,72 @@ Condor gridpack generation works for lxplus (and LPC?) but may not work at your 
 nohup ./submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial > TT01j_tutorial.log
 ```
 </details>
+
+### Generating EDM GEN files
+
+Producing GEN files from the above gridpack is usually straight forward and similar to other CMS samples.
+We will use a fragment file that defines the settings that will be used for decays, parton shower and hadronization in pythia.
+For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz`.
+
+``` bash
+cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
+    --mc \
+    --python_filename gen_cfg.py \
+    --eventcontent RAWSIM,LHE \
+    --datatier GEN,LHE \
+    --conditions 106X_mc2017_realistic_v6 \
+    --beamspot Realistic25ns13TeVEarly2017Collision \
+    --step LHE,GEN \
+    --nThreads 1 \
+    --geometry DB:Extended \
+    --era Run2_2017 \
+    --customise Configuration/DataProcessing/Utils.addMonitoring \
+    --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123" \
+    --fileout file:gen_123.root \
+    --no_exec -n 100
+```
+
+<details>
+<summary>Using GEN samples to determine the qCut for jet matching</summary>
+This is an important topic for any sample that is generated with additional partons in the matrix element, not exclusively for EFT samples.
+...
+</details>
+
+
+### Generating NanoGEN files
+
+NanoGEN is a very convenient format for exploratory studies...
+
+Make sure you are in `generation/` and have a CMSSW environment set.
+
+A cmsRun config file can be created 
+``` bash
+cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
+    --python_filename nanogen_cfg.py --eventcontent NANOAODGEN \
+    --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD \
+    --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123" \
+    --fileout file:nanogen_123.root --conditions 106X_mcRun2_asymptotic_v13 \
+    --beamspot Realistic25ns13TeV2016Collision --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2016 --no_exec --mc -n 100
+
+```
+The CMSSW area that has been set up in the previous step already includes a useful tool that extracts the coefficients of the polynomial fit.
+If we want to keep the original weights we can add them to the list of named weights in the NanoGEN config file:
+
+``` bash
+echo "named_weights = [" >> nanogen_cfg.py
+cat TT01j_tutorial_reweight_card.dat | grep launch | sed 's/launch --rwgt_name=/"/' | sed 's/$/",/' >> nanogen_cfg.py
+echo -e "]\nprocess.genWeightsTable.namedWeightIDs = named_weights\nprocess.genWeightsTable.namedWeightLabels = named_weights" >> nanogen_cfg.py
+```
+
+Producing NanoGEN is fairly fast, and a few thousand events can usually be produced locally like
+
+``` bash
+cmsRun nanogen_cfg.py
+```
+
+#### Checking the weights
+
+TBD
 
 ## Histograms
 
