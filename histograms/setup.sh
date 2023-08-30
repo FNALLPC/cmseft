@@ -8,14 +8,16 @@ if ! which mamba 2>/dev/null; then
     echo "Conda not found, please install mambaforge by following the instructions"
     echo " at https://github.com/conda-forge/miniforge#install"
   else
-    conda install -y mamba
+    conda activate base
+    conda install -c conda-forge -y mamba
   fi
 fi
 
+conda activate base
 if ! mamba env list|grep -q coffea-env; then
   mamba create --name coffea-env -c conda-forge --strict-channel-priority -y python=3.9 numpy=1.23.5 coffea
 fi
-mamba activate coffea-env
+conda activate coffea-env
 
 if [ ! -d topcoffea ]; then
   # Install the topcoffea dependency
