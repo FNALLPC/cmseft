@@ -52,6 +52,7 @@ Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gri
 cp diagram_generation.sh genproductions/bin/MadGraph5_aMCatNLO/
 cd genproductions/bin/MadGraph5_aMCatNLO/
 mkdir -pv addons/models/
+cd addons/models/
 wget https://feynrules.irmp.ucl.ac.be/raw-attachment/wiki/SMEFT/SMEFTsim_topU3l_MwScheme_UFO.tar.gz
 tar -xvzf SMEFTsim_topU3l_MwScheme_UFO.tar.gz
 cd SMEFTsim_topU3l_MwScheme_UFO
@@ -62,7 +63,7 @@ Take a look at TT01j_tutorial_proc_card.dat and TT01j_tutorial_reweight_card.dat
 ```bash
 mkdir TT01j_tutorial
 cp ../../../../../../../TT01j* .
-cd addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
+cd TT01j_tutorial
 ```
 Let's take a look at some diagrams
 ```bash
