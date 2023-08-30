@@ -21,7 +21,7 @@ conda activate coffea-env
 
 if [ ! -d topcoffea ]; then
   # Install the topcoffea dependency
-  git clone -b new_histEFT https://github.com/btovar/topcoffea.git
+  git clone https://github.com/TopEFT/topcoffea.git
   pushd topcoffea
   pip install -e .
   popd
