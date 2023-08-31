@@ -1,4 +1,4 @@
-mport model SMEFTsim_topU3l_MwScheme_UFO
+import model SMEFTsim_topU3l_MwScheme_UFO
 
 define p = g u c d s u~ c~ d~ s~
 define j = p
