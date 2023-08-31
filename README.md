@@ -193,6 +193,11 @@ This section of the tutorial will demonstrate how to build a model from the
 template histograms and run fits using the
 [Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/) tool.
 
+This section will be run outside of the conda enviornment used so far. To exit the environment, run
+```
+conda deactivate
+```
+
 To start, from the main area of this repository, run
 ```bash
 cd statistics
