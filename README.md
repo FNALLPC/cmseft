@@ -215,7 +215,29 @@ combine -M MultiDimFit workspace.root --freezeParameters cHtbIm,cHtbRe,ctGIm,ctW
   --redefineSignalPOIs cHt,ctGRe --setParameters cHt=0,ctGRe=0 --algo singles
 ```
 
-Do some scans too...
+To perform a one-dimensional likelihood scan on cHt (freezing all other WC to 0), run
+```
+combineTool.py workspace.root -M MultiDimFit --algo grid --points 10 \
+    --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe,ctGRe \
+    --redefineSignalPOIs cHt -n Scan1D.cHt
+```
+To plot the likelihood scan, run
+```
+python plot1d.py -p cHt
+```
+An analogous set of commands can be used to generate 1D likelihood scans of the other WC.
+
+To perform a two-dimensional likelihood scan on cHt and ctGRe (freezing all other WC to 0), run
+```
+combineTool.py workspace.root -M MultiDimFit --algo grid --points 100 \
+    --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe \
+    --redefineSignalPOIs cHt,ctGRe -n Scan2D.cHt.ctGRe
+```
+To plot the 2D likelihood scan, run
+```
+python plot2d.py -p cHt,ctGRe
+```
+Again, analogous commands can be used to generate the 2D likelihood scan for other combinations of WC.
 
 ### PCA
 Run

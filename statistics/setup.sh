@@ -10,6 +10,7 @@ if [ ! -d CMSSW_11_3_4 ]; then
   pushd CMSSW_11_3_4/src
   cmsenv
   git clone -b interference https://github.com/cms-analysis/HiggsAnalysis-CombinedLimit.git HiggsAnalysis/CombinedLimit
+  bash <(curl -s https://raw.githubusercontent.com/cms-analysis/CombineHarvester/main/CombineTools/scripts/sparse-checkout-https.sh)
   scram b -j4
   popd
 fi
