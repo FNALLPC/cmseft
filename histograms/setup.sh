@@ -17,12 +17,14 @@ if ! conda env list|grep -q coffea-env; then
 fi
 conda activate coffea-env
 
-if [ ! -d topcoffea ]; then
+if [ ! -d dir_for_topcoffea ]; then
   # Install the topcoffea dependency
+  mkdir dir_for_topcoffea
+  cd dir_for_topcoffea
   git clone https://github.com/TopEFT/topcoffea.git
-  pushd topcoffea
+  cd topcoffea
   pip install -e .
-  popd
+  cd ../..
 fi
 
 # Get the example data file
