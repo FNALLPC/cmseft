@@ -91,6 +91,24 @@ Producing GEN files from the above gridpack is usually straight forward and simi
 We will use a fragment file that defines the settings that will be used for decays, parton shower and hadronization in pythia.
 For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz`.
 
+You can change the path to the gridpack in the file in `cmseft2023/generation/CMSSW_10_6_26/src/Configuration/GenProduction/python/pythia_fragment.py`:
+
+``` python
+externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
+    args = cms.vstring('/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz'),
+    nEvents = cms.untracked.uint32(5000),
+    numberOfParameters = cms.uint32(1),
+    outputFile = cms.string('cmsgrid_final.lhe'),
+    scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_cvmfs.sh')
+)
+```
+If you're not running this tutorial at the LPC you can replace the path to point to your gridpack, or copy the gridpack somewhere convienent using
+
+``` bash
+xrdcp root://cmseos.fnal.gov//store/user//dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz /A/B/C
+```
+
+For creating a cmsRun config file make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
 ``` bash
 cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
     --mc \
@@ -109,18 +127,28 @@ cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
     --no_exec -n 100
 ```
 
+To actually create the GEN file just run
+
+``` bash
+cmsRun gen_cfg.py
+```
+
 <details>
 <summary>Using GEN samples to determine the qCut for jet matching</summary>
 This is an important topic for any sample that is generated with additional partons in the matrix element, not exclusively for EFT samples.
+
 ...
 </details>
 
 
 ### Generating NanoGEN files
 
-NanoGEN is a very convenient format for exploratory studies...
+NanoGEN is a very convenient format for exploratory studies.
+The event content of the flat trees is similar to the generator infomration in NanoAOD,
+but much faster generation time because the detector simulation and reconstruction is being skipped.
 
-Make sure you are in `generation/` and have a CMSSW environment set.
+We will generate a few events directly from the gridpack created in the previous step (no intermediate GEN file is needed!), and use the same pythia fragment as in the GEN step before.
+Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
 
 A cmsRun config file can be created 
 ``` bash
@@ -133,6 +161,8 @@ cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
 
 ```
 The CMSSW area that has been set up in the previous step already includes a useful tool that extracts the coefficients of the polynomial fit.
+You'll learn more about the coefficients and how to use them in a later part.
+Documentation of the used package can be found on the [mgprod github repo](https://github.com/TopEFT/mgprod#additional-notes-on-the-production-of-naod-samples).
 If we want to keep the original weights we can add them to the list of named weights in the NanoGEN config file:
 
 ``` bash
