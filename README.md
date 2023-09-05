@@ -135,8 +135,23 @@ cmsRun gen_cfg.py
 <details>
 <summary>Using GEN samples to determine the qCut for jet matching</summary>
 This is an important topic for any sample that is generated with additional partons in the matrix element, not exclusively for EFT samples.
+The qCut is set in the pythia fragment.
+A good starting point is around the xqcut that is being set in the MG run_card.dat.
 
-...
+Several GEN files with different qcut values have been prepared in `/eos/uscms/store/user/dspitzba/EFT/qcut*.root*`.
+You can look them up from anywhere with a grid certificate with
+
+``` bash
+xrdfs root://cmseos.fnal.gov/ ls /store/user/dspitzba/EFT/
+```
+
+You can plot differential jet rate plots:
+
+``` bash
+. setup_hist.sh
+python djr.py --input root://cmseos.fnal.gov//store/user/dspitzba/EFT/qcut30.root --output djr_qcut30.pdf
+```
+
 </details>
 
 
@@ -147,7 +162,7 @@ The event content of the flat trees is similar to the generator infomration in N
 but much faster generation time because the detector simulation and reconstruction is being skipped.
 
 We will generate a few events directly from the gridpack created in the previous step (no intermediate GEN file is needed!), and use the same pythia fragment as in the GEN step before.
-Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
+Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set (e.g. run `. setup.sh` again to be sure).
 
 A cmsRun config file can be created 
 ``` bash
@@ -178,7 +193,19 @@ cmsRun nanogen_cfg.py
 
 #### Checking the weights
 
-TBD
+It is always a good idea to check if some of the weights have enhanced tails.
+A simple script that reads the weights and makes a histogram for the pure `ctG` contributions can be run with
+
+``` bash
+. setup_hist.sh
+python weights.py
+```
+
+Additionally, it is always a good idea to compare a reweighted sample with a sample that has been produced at a fixed EFT point.
+
+``` bash
+python closure.py
+```
 
 ## Histograms
 
