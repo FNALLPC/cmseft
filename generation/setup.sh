@@ -6,7 +6,7 @@ fi
 
 # in case this is not already done, setup cms packaging commands
 . /cvmfs/cms.cern.ch/cmsset_default.sh
-
+ export SCRAM_ARCH=slc7_amd64_gcc700
 if [ ! -d CMSSW_10_6_26 ]; then
   cmsrel CMSSW_10_6_26
   pushd CMSSW_10_6_26/src
