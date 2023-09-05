@@ -62,11 +62,10 @@ Take a look at TT01j_tutorial_proc_card.dat and TT01j_tutorial_reweight_card.dat
 ```bash
 mkdir TT01j_tutorial
 cp $TUTORIALGEN/TT01j* TT01j_tutorial/
-cd TT01j_tutorial
 ```
 Let's take a look at some diagrams
 ```bash
- cd ../../../../
+ cd $TUTORIALGEN
  ./diagram_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
 ```
 
