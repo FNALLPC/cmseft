@@ -48,7 +48,7 @@ We will start by creating a gridpack. Start in a fresh terminal window.
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
 export TUTORIALGEN=$(pwd) 
-cp diagram_generation.sh genproductions/bin/MadGraph5_aMCatNLO/
+cp diagram_generation.sh genproductions
 cd genproductions/bin/MadGraph5_aMCatNLO/
 mkdir -pv addons/models/
 cd addons/models/
@@ -65,8 +65,8 @@ cp $TUTORIALGEN/TT01j* TT01j_tutorial/
 ```
 Let's take a look at some diagrams
 ```bash
- cd $TUTORIALGEN
- ./diagram_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
+ cd $TUTORIALGEN/genproductions
+ ./diagram_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
 ```
 
 To run locally,
