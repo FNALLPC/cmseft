@@ -9,10 +9,10 @@ if [ -z "$PRODHOME" ]; then
   PRODHOME=`pwd`
 fi
 
-CARDSDIR=${PRODHOME}/${carddir}
+CARDSDIR=${PRODHOME}/bin/MadGraph5_aMCatNLO/${carddir}
 
 
-WORKDIR=$PRODHOME/diagrams_tmp_${name}
+WORKDIR=$PRODHOME//bin/MadGraph5_aMCatNLO/diagrams_tmp_${name}
 if [ -d $WORKDIR ]; then
     rm -rf $WORKDIR
 fi
@@ -52,7 +52,7 @@ rm "$MG"
 cd $WORKDIR
 
 # careful: if you change the model path here, you have to change it in submit_cmsconnect_gridpack_generation(_singlejob).sh as well (model_directory)
-cp -rp ${PRODHOME}/addons/models/* ${MGBASEDIRORIG}/models/
+cp -rp ${PRODHOME}/bin/MadGraph5_aMCatNLO/addons/models/* ${MGBASEDIRORIG}/models/
 
 if [ -e $CARDSDIR/${name}_restrict_custom.dat ]; then
   cp $CARDSDIR/${name}_restrict_custom.dat ./Cards/restrict_custom.dat
@@ -75,5 +75,5 @@ do
     ps2pdf $epsfile $PDFOUT/${epsfile%.*}.pdf
 done
 
-cd $PRODHOME
+cd $PRODHOME/bin/MadGraph5_aMCatNLO/
 rm -rf $WORKDIR
