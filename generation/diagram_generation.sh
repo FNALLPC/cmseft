@@ -9,10 +9,10 @@ if [ -z "$PRODHOME" ]; then
   PRODHOME=`pwd`
 fi
 
-CARDSDIR=${PRODHOME}/bin/MadGraph5_aMCatNLO/${carddir}
+CARDSDIR=${PRODHOME}/${carddir}
 
 
-WORKDIR=$PRODHOME//bin/MadGraph5_aMCatNLO/diagrams_tmp_${name}
+WORKDIR=$PRODHOME/diagrams_tmp_${name}
 if [ -d $WORKDIR ]; then
     rm -rf $WORKDIR
 fi
@@ -21,9 +21,9 @@ mkdir -p $WORKDIR
 cd $WORKDIR
 
 # Folder structure is different on CMSConnect
-helpers_dir=${PRODHOME}/bin/MadGraph5_aMCatNLO/Utilities
+helpers_dir=${PRODHOME}/Utilities
 if [ ! -d "$helpers_dir" ]; then
-    helpers_dir=$(git rev-parse --show-toplevel)/bin/MadGraph5_aMCatNLO/Utilities
+    helpers_dir=$(git rev-parse --show-toplevel)/Utilities
 fi
 source ${helpers_dir}/gridpack_helpers.sh
 
@@ -52,7 +52,7 @@ rm "$MG"
 cd $WORKDIR
 
 # careful: if you change the model path here, you have to change it in submit_cmsconnect_gridpack_generation(_singlejob).sh as well (model_directory)
-cp -rp ${PRODHOME}/bin/MadGraph5_aMCatNLO/addons/models/* ${MGBASEDIRORIG}/models/
+cp -rp ${PRODHOME}/addons/models/* ${MGBASEDIRORIG}/models/
 
 if [ -e $CARDSDIR/${name}_restrict_custom.dat ]; then
   cp $CARDSDIR/${name}_restrict_custom.dat ./Cards/restrict_custom.dat
@@ -75,5 +75,5 @@ do
     ps2pdf $epsfile $PDFOUT/${epsfile%.*}.pdf
 done
 
-cd $PRODHOME/bin/MadGraph5_aMCatNLO/
+cd $PRODHOME/
 rm -rf $WORKDIR
