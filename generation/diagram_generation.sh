@@ -21,7 +21,7 @@ mkdir -p $WORKDIR
 cd $WORKDIR
 
 # Folder structure is different on CMSConnect
-helpers_dir=${PRODHOME}/Utilities
+helpers_dir=${PRODHOME}/bin/MadGraph5_aMCatNLO/Utilities
 if [ ! -d "$helpers_dir" ]; then
     helpers_dir=$(git rev-parse --show-toplevel)/bin/MadGraph5_aMCatNLO/Utilities
 fi
