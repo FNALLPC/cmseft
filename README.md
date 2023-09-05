@@ -25,7 +25,7 @@ For this exercise we will generate a $t\bar{t}$ semileptonic sample with one ext
 
 To start, from the main area of this repository, run
 ```bash
-cd generation
+cd cmseft2023/generation
 . setup.sh
 ```
 this sets up the CMS [genproductions](https://github.com/cms-sw/genproductions) git repository
@@ -48,7 +48,7 @@ We will start by creating a gridpack. Start in a fresh terminal window.
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
 export TUTORIALGEN=$(pwd) 
-cp diagram_generation.sh genproductions
+cp diagram_generation.sh genproductions/bin/MadGraph5_aMCatNLO/
 cd genproductions/bin/MadGraph5_aMCatNLO/
 mkdir -pv addons/models/
 cd addons/models/
@@ -65,7 +65,8 @@ cp $TUTORIALGEN/TT01j* TT01j_tutorial/
 ```
 Let's take a look at some diagrams
 ```bash
- cd $TUTORIALGEN/genproductions
+ cd $TUTORIALGEN/genproductions/bin/MadGraph5_aMCatNLO/
+ eval `scram unsetenv -sh`
  ./diagram_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
 ```
 
