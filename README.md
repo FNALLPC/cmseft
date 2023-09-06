@@ -260,6 +260,13 @@ cd statistics
 . setup.sh
 ```
 
+### Creating a workspace with process scaling
+Run
+```bash
+PYTHONPATH=$PWD:$PYTHONPATH text2workspace.py signal_region_card.txt --X-allow-no-background -P eftmodel:eftModel -o workspace_norm.root
+```
+(we're abusing the python path a bit but the model object is only needed during this step)
+
 ### Creating a workspace with per-bin morphing
 
 Run
