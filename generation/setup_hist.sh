@@ -13,6 +13,6 @@ fi
 
 if ! conda env list|grep -q coffea-env; then
   # mamba create --name coffea-env -c conda-forge --strict-channel-priority -y python=3.9 numpy=1.23.5 coffea
-  conda env create -f environment.yml
+  conda env create -f ../histogram/environment.yml
 fi
 conda activate coffea-env
