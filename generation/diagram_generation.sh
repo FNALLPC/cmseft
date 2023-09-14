@@ -68,6 +68,9 @@ echo "display diagrams ./" >> ${name}_proc_card.dat
 
 ${MGBASEDIRORIG}/bin/mg5_aMC ${name}_proc_card.dat
 
+# remove all the zero coefficients
+sed -e "s/NP\w*=0, //g" -e "s/, SMHLOOP=0//" -e "s/NP=1, //" -i *.eps
+
 PDFOUT="../${name}_diagrams"
 mkdir -p $PDFOUT
 for epsfile in *.eps 
