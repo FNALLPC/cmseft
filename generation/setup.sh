@@ -20,9 +20,9 @@ if [ ! -d CMSSW_13_0_14 ]; then
   git fetch eftfit
 
   # these might not work yet
-  git cherry-pick c0901cfc459a8d5282ebb1bc74374903d29e3eee
-  git cherry-pick 4068e48b02b1fcb46949b3ebeac6a7b59062c2e0
-  git cherry-pick 76d0a24615c2b2b3aa7333c5aed5cc7bb6a7fd1d
+  git cherry-pick ffba2640cf7d8da6b8b36559c64e90a2076153e9
+  git cherry-pick 416096620ec9d477caad74704c40d3d7d695e06a
+  git cherry-pick f9a76b864ebf40833f73b03778634b553aecfc98
   git cherry-pick 48581ffb94b1957203160428745b69048a7ffc94
 
   cd ../../
