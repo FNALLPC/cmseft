@@ -12,7 +12,7 @@ interactive machine, e.g. [FNAL LPC](https://uscms.org/uscms_at_work/physics/com
 
 To start, please clone this repository in a directory that has sufficient quota for the tutorial (at least 50GB),
 ```bash
-git clone git@github.com:FNALLPC/cmseft2023.git
+git clone git@github.com:FNALLPC/cmseft.git
 ```
 
 ## Generation
@@ -25,7 +25,7 @@ For this exercise we will generate a $t\bar{t}$ semileptonic sample with one ext
 
 To start, from the main area of this repository, run
 ```bash
-cd cmseft2023/generation
+cd cmseft/generation
 . setup.sh
 ```
 this sets up the CMS [genproductions](https://github.com/cms-sw/genproductions) git repository
