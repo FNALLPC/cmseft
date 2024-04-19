@@ -273,13 +273,24 @@ template histograms and run fits using the
 [Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/) tool.
 
 This section will be run outside of the conda enviornment used so far. To exit the environment, run
-```
+```bash
 conda deactivate
 ```
 
 To start, from the main area of this repository, run
 ```bash
 cd statistics
+```
+
+Start up the singularity container for CMSSW with CentOS7:
+```bash
+cmssw-el7 --bind `readlink -f ${HOME}/nobackup/` --bind /cvmfs
+```
+
+If you are running on cmslpc, the nobackup directory will now be mounted under its true path (not the link nobackup). You will need to return to the statistics directory.
+
+Set up CMSSW and combine by running
+```bash
 . setup.sh
 ```
 
@@ -301,31 +312,32 @@ which implements the [interferenceModel](https://github.com/cms-analysis/HiggsAn
 physics model in combine using the scaling data constructed at the end of the previous section.
 
 ### Running fits and scans
-```
+```bash
 combine -M MultiDimFit workspace.root --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe \
   --redefineSignalPOIs cHt,ctGRe --setParameters cHt=0,ctGRe=0 --algo singles
 ```
 
 To perform a one-dimensional likelihood scan on cHt (freezing all other WC to 0), run
-```
+```bash
 combineTool.py workspace.root -M MultiDimFit --algo grid --points 10 \
     --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe,ctGRe \
     --redefineSignalPOIs cHt -n Scan1D.cHt
 ```
 To plot the likelihood scan, run
-```
+```bash
 python plot1d.py -p cHt
 ```
 An analogous set of commands can be used to generate 1D likelihood scans of the other WC.
 
 To perform a two-dimensional likelihood scan on cHt and ctGRe (freezing all other WC to 0), run
-```
+```bash
 combineTool.py workspace.root -M MultiDimFit --algo grid --points 100 \
     --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe \
-    --redefineSignalPOIs cHt,ctGRe -n Scan2D.cHt.ctGRe
+    --redefineSignalPOIs cHt,ctGRe -n Scan2D.cHt.ctGRe \
+    --setParameterRanges cHt=-40,30:ctGRe=-1,1
 ```
 To plot the 2D likelihood scan, run
-```
+```bash
 python plot2d.py -p cHt,ctGRe
 ```
 Again, analogous commands can be used to generate the 2D likelihood scan for other combinations of WC.
