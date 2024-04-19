@@ -45,6 +45,19 @@ Alternative generators include SMEFT@NLO, Dim6Top, etc.
 ### Creating the gridpack
 We will start by creating a gridpack. Start in a fresh terminal window.
 
+The gridpack generation in this tutorial runs on scl7/centos7. We will therefore run in a singularity container.
+On the LPC:
+
+``` bash
+cmssw-cc7 --bind `readlink -f ${HOME}/nobackup/` --bind /cvmfs
+```
+On lxplus
+
+``` bash
+cmssw-cc7 --bind /cvmfs
+```
+Now, navigate back to your EFT tutorial work directory.
+
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
 export TUTORIALGEN=$(pwd) 
@@ -86,11 +99,19 @@ nohup ./submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SME
 
 ### Generating EDM GEN files
 
+Exit the singularity container from the previous step. If you're running on an EL8 machine (e.g. `lxplus8.cern.ch` or `cmslpc-el8.fnal.gov`) you can run the following commands without a container.
+Navigate back to your EFT tutorial work directory.
+
+``` bash
+cd generation/
+pushd CMSSW_13_0_14/src && cmsenv && popd
+```
+
 Producing GEN files from the above gridpack is usually straight forward and similar to other CMS samples.
 We will use a fragment file that defines the settings that will be used for decays, parton shower and hadronization in pythia.
 For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz`.
 
-You can change the path to the gridpack in the file in `cmseft2023/generation/CMSSW_10_6_26/src/Configuration/GenProduction/python/pythia_fragment.py`:
+You can change the path to the gridpack in the file in `cmseft/generation/CMSSW_10_6_26/src/Configuration/GenProduction/python/pythia_fragment.py`:
 
 ``` python
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
@@ -114,12 +135,12 @@ cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
     --python_filename gen_cfg.py \
     --eventcontent RAWSIM,LHE \
     --datatier GEN,LHE \
-    --conditions 106X_mc2017_realistic_v6 \
-    --beamspot Realistic25ns13TeVEarly2017Collision \
+    --conditions 130X_mcRun3_2023_realistic_v14 \
+    --beamspot Realistic25ns13p6TeVEarly2023Collision \
     --step LHE,GEN \
     --nThreads 1 \
     --geometry DB:Extended \
-    --era Run2_2017 \
+    --era Run3 \
     --customise Configuration/DataProcessing/Utils.addMonitoring \
     --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123" \
     --fileout file:gen_123.root \
@@ -165,15 +186,17 @@ We will generate a few events directly from the gridpack created in the previous
 Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set (e.g. run `. setup.sh` again to be sure).
 
 A cmsRun config file can be created 
+
 ``` bash
 cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
     --python_filename nanogen_cfg.py --eventcontent NANOAODGEN \
     --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD \
     --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123" \
-    --fileout file:nanogen_123.root --conditions 106X_mcRun2_asymptotic_v13 \
-    --beamspot Realistic25ns13TeV2016Collision --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2016 --no_exec --mc -n 100
+    --fileout file:nanogen_123.root --conditions 130X_mcRun3_2023_realistic_v14 --beamspot Realistic25ns13p6TeVEarly2023Collision \
+    --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run3 --no_exec --mc -n 100
 
 ```
+
 The CMSSW area that has been set up in the previous step already includes a useful tool that extracts the coefficients of the polynomial fit.
 You'll learn more about the coefficients and how to use them in a later part.
 Documentation of the used package can be found on the [mgprod github repo](https://github.com/TopEFT/mgprod#additional-notes-on-the-production-of-naod-samples).

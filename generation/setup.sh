@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d genproductions ]; then
-  git clone https://github.com/cms-sw/genproductions -b master --depth 1
+  git clone https://github.com/cms-sw/genproductions -b mg265UL --depth 1
 fi
 
 # in case this is not already done, setup cms packaging commands
