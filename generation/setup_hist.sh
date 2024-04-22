@@ -6,9 +6,11 @@ unset PYTHONPATH # To avoid conflicts
 if [ "$(which conda 2>/dev/null)" == "" ]; then
   echo "Conda not found, please install mambaforge by following the instructions"
   echo " at https://github.com/conda-forge/miniforge#install"
+  exit
 elif [ "$(which conda 2>/dev/null)" == "/usr/bin/conda" ]; then
   echo "Conda found, but not where you want it! Please install mambaforge by following the instructions"
   echo " at https://github.com/conda-forge/miniforge#install"
+  exit
 fi
 
 if ! conda env list|grep -q coffea-env; then
