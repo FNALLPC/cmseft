@@ -111,7 +111,7 @@ Producing GEN files from the above gridpack is usually straight forward and simi
 We will use a fragment file that defines the settings that will be used for decays, parton shower and hadronization in pythia.
 For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz`.
 
-You can change the path to the gridpack in the file in `cmseft/generation/CMSSW_10_6_26/src/Configuration/GenProduction/python/pythia_fragment.py`:
+You can change the path to the gridpack in the file in `cmseft/generation/CMSSW_13_0_14/src/Configuration/GenProduction/python/pythia_fragment.py`:
 
 ``` python
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
