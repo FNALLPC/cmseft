@@ -29,7 +29,7 @@ cd cmseft/generation
 . setup.sh
 ```
 this sets up the CMS [genproductions](https://github.com/cms-sw/genproductions) git repository
-and a local copy of `CMSSW_10_6_26` with additional NanoGEN tools to record EFT weights.
+and a local copy of `CMSSW_13_0_14` with additional NanoGEN tools to record EFT weights.
 
 <details>
 <summary>Alternative: setup without CMSSW, using LCG</summary>
