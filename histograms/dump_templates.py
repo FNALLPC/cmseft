@@ -24,7 +24,7 @@ if __name__ == "__main__":
     httbar = hthist["ttbar", 2:, :]
 
     # templates at wc=0
-    with uproot.recreate("../statistics/templates.root") as fout:
+    with uproot.recreate("templates.root") as fout:
         fout["ttbar"] = httbar.as_hist({})
         # fake data
         fout["data_obs"] = httbar.as_hist({})
@@ -45,5 +45,5 @@ if __name__ == "__main__":
         },
     ]
     print(scaling)
-    with gzip.open("../statistics/scaling.pkl.gz", "wb") as fout:
+    with gzip.open("scaling.pkl.gz", "wb") as fout:
         pickle.dump(scaling, fout)

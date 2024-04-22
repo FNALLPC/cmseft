@@ -264,13 +264,17 @@ Before going to the next section, run
 ```bash
 ./dump_templates.py histos.pkl.gz
 ```
-which will write two files into `../statistics/` directory for use with the next section.
+which will write two files: `templates.root` and `scaling.pkl.gz` for use with the next section.
 
 ## Statistics
 
 This section of the tutorial will demonstrate how to build a model from the
 template histograms and run fits using the
 [Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/) tool.
+The section uses three files from the previous section, but they have been included in the repository for convenience:
+- `templates.root` contain the histograms for the nominal samples
+- `scaling.pkl.gz` contains the per-bin scaling as a function of the EFT parameters
+- `quad_fit_coeff.json` contains the per-channel scaling (for normalization morphing instead of per-bin morphing)
 
 This section will be run outside of the conda enviornment used so far. To exit the environment, run
 ```bash
@@ -308,7 +312,7 @@ Run
 text2workspace.py signal_region_card.txt --X-allow-no-background -P HiggsAnalysis.CombinedLimit.InterferenceModels:interferenceModel \
   --PO verbose --PO scalingData=scaling.pkl.gz -o workspace.root
 ```
-which implements the [interferenceModel](https://github.com/cms-analysis/HiggsAnalysis-CombinedLimit/blob/interference/docs/part2/physicsmodels.md#multi-process-interference)
+which implements the [interferenceModel](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/latest/part2/physicsmodels/#multi-process-interference)
 physics model in combine using the scaling data constructed at the end of the previous section.
 
 ### Running fits and scans
@@ -345,11 +349,14 @@ Again, analogous commands can be used to generate the 2D likelihood scan for oth
 ### PCA
 Run
 ```bash
-combine -M MultiDimFit workspace.root --skipInitialFit --robustHesse 1
+combine -M MultiDimFit workspace.root --skipInitialFit --robustHesse 1 -n .WCbasis
 ```
 which computes the Hessian of the likelihood at the initial point. Since we have an Asimov dataset, this
 initial point should be a global minimum, and we can use it to understand what, if any, degeneracies in the parameters
-exist at this point. The command will output a file we can look at
+exist at this point. When we run it, both the Hessian and its inverse (the covariance matrix) will be calculated. However,
+likely if there are degeneracies the hessian will be singular so the covariance calculation will fail.
+
+The command will output a file we can look at
 ```
 $ root -l robustHesseTest.root
 root [0]
@@ -380,3 +387,10 @@ Vector (16)  is as follows
   15 |0.00125546
 ```
 but this includes both the POIs as well as the BB-lite nuisance parameters. We need to get the _profile hessian_ to know what the POIs constraint is.
+
+To solve this, we use the `rotate.py` routine:
+```bash
+python3 rotate.py --hesse robustHesse.WCbasis.root --scalingIn scaling.pkl.gz  --scaleByEigenvalue
+text2workspace.py signal_region_card.txt --X-allow-no-background -P HiggsAnalysis.CombinedLimit.InterferenceModels:interferenceModel \
+  --PO verbose --PO scalingData=rotated_scaling.pkl.gz -o workspace_rotated.root
+```
