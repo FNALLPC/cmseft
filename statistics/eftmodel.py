@@ -33,4 +33,4 @@ class EFTModel(PhysicsModelBase):
             return "scaling_ttbar_SR"
 
 
-eftModel = EFTModel("../histograms/quad_fit_coeff.json")
+eftModel = EFTModel("quad_fit_coeff.json")
