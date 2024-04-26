@@ -45,19 +45,6 @@ Alternative generators include SMEFT@NLO, Dim6Top, etc.
 ### Creating the gridpack
 We will start by creating a gridpack. Start in a fresh terminal window.
 
-The gridpack generation in this tutorial runs on scl7/centos7. We will therefore run in a singularity container.
-On the LPC:
-
-``` bash
-cmssw-cc7 --bind `readlink -f ${HOME}/nobackup/` --bind /cvmfs
-```
-On lxplus
-
-``` bash
-cmssw-cc7 --bind /cvmfs
-```
-Now, navigate back to your EFT tutorial work directory.
-
 Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
 export TUTORIALGEN=$(pwd) 
