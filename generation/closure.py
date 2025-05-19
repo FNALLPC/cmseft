@@ -42,6 +42,7 @@ if __name__ == '__main__':
 
     h_reweighted.fill(
         ht=ak.sum(events_reweighted.GenJet.pt, axis=1),
+        # NOTE We're filling with the actual MG weights so the error bars _will_ be correct in this case
         weight=getattr(events_reweighted.LHEWeight, 'EFTrwgt10_ctGRe_2.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0'),
     )
 
@@ -53,21 +54,42 @@ if __name__ == '__main__':
         ht=ak.sum(events_fixed.GenJet.pt, axis=1),
     )
 
-    fig, ax = plt.subplots()
+    fig, (ax, rax) = plt.subplots(
+            nrows=2,
+            ncols=1,
+            gridspec_kw={"height_ratios": (3, 1)},
+            sharex=True
+    )
+    plt.sca(ax)
+    # Using the Run 3 COM and 2023 lumi
+    hep.cms.label(label='', lumi='32.7', data=False, com=13.6)
 
     h_fixed.plot1d(
         ax=ax,
         label=r'$C_{tG}=2 (fixed)$',
         density=True,
     )
-    h_reweighted.plot1d(
+    hep.histplot(h_reweighted,
         ax=ax,
         label=r'$C_{tG}=2 (reweighted)$',
         density=True,
+        #yerr=False # NOTE be careful here, error bars on reweighted samples are not always accurate
+                    # (e.g., if you're using something like `histEFT` where the bin yields are computed on the fly)
     )
+    hep.histplot(
+            h_fixed.values() / h_fixed.values(),
+            bins=h_reweighted.axes[-1].edges,
+            yerr=(np.sqrt(h_fixed.variances()) / h_fixed.values()),
+            ax=rax)
+    hep.histplot(
+            h_reweighted.values() / h_fixed.values() * np.sum(h_fixed.values())/np.sum(h_reweighted.values()),
+            bins=h_reweighted.axes[-1].edges,
+            ax=rax)
 
     ax.set_ylabel(r'a.u.')
     ax.set_xlabel(r'$H_{T} (GeV)$')
+    rax.set_ylabel(r'Ratio (shape)')
+    rax.set_ylim(0.5, 1.5)
 
     ax.set_yscale("log")
 
