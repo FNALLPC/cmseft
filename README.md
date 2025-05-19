@@ -80,7 +80,7 @@ To run locally,
 Condor gridpack generation works for lxplus (and LPC?) but may not work at your local cluster, depending on your cluster's batch setup. You could use CMS connect as well (link)
   
 ```bash
-nohup ./submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial > TT01j_tutorial.log
+nohup ./submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial > TT01j_tutorial.log &
 ```
 </details>
 
@@ -96,13 +96,13 @@ pushd CMSSW_13_0_14/src && cmsenv && popd
 
 Producing GEN files from the above gridpack is usually straight forward and similar to other CMS samples.
 We will use a fragment file that defines the settings that will be used for decays, parton shower and hadronization in pythia.
-For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz`.
+For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz`.
 
 You can change the path to the gridpack in the file in `cmseft/generation/CMSSW_13_0_14/src/Configuration/GenProduction/python/pythia_fragment.py`:
 
 ``` python
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz'),
+    args = cms.vstring('/eos/uscms/store/user/byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz'),
     nEvents = cms.untracked.uint32(5000),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
@@ -112,7 +112,7 @@ externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
 If you're not running this tutorial at the LPC you can replace the path to point to your gridpack, or copy the gridpack somewhere convienent using
 
 ``` bash
-xrdcp root://cmseos.fnal.gov//store/user//dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz /A/B/C
+xrdcp root://cmseos.fnal.gov//store/user//byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz /A/B/C
 ```
 
 For creating a cmsRun config file make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
