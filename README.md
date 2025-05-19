@@ -146,18 +146,18 @@ This is an important topic for any sample that is generated with additional part
 The qCut is set in the pythia fragment.
 A good starting point is around the xqcut that is being set in the MG run_card.dat.
 
-Several GEN files with different qcut values have been prepared in `/eos/uscms/store/user/dspitzba/EFT/qcut*.root*`.
+Several GEN files with different qcut values have been prepared in `/eos/uscms/store/user/byates1/EFT/qcut*.root`.
 You can look them up from anywhere with a grid certificate with
 
 ``` bash
-xrdfs root://cmseos.fnal.gov/ ls /store/user/dspitzba/EFT/
+xrdfs root://cmseos.fnal.gov/ ls /store/user/byates1/EFT/
 ```
 
 You can plot differential jet rate plots:
 
 ``` bash
 . setup_hist.sh
-python djr.py --input root://cmseos.fnal.gov//store/user/dspitzba/EFT/qcut30.root --output djr_qcut30.pdf
+python djr.py --input root://cmseos.fnal.gov//store/user/byates1/EFT/qcut30.root --output djr_qcut30.pdf
 ```
 
 </details>
