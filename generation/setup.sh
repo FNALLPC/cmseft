@@ -16,7 +16,7 @@ if [ ! -d CMSSW_13_0_14 ]; then
 
   git cms-addpkg PhysicsTools/NanoAOD
   cd PhysicsTools/NanoAOD/
-  git remote add eftfit https://bryates/cmssw.git
+  git remote add eftfit https://github.com/bryates/cmssw.git
   git fetch eftfit
   git cherry-pick 869fdb3011b1d864d3d85090ee4e22ea3fdb32f9
   git cherry-pick 493da24362983cb78b0e9ad75f3cc6d824b54f5e
