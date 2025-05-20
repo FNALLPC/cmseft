@@ -21,14 +21,14 @@ if __name__ == '__main__':
     args = argParser.parse_args()
 
     events_fixed = NanoEventsFactory.from_root(
-        'root://cmseos.fnal.gov//store/user/dspitzba/EFT/nanogen_fixed_123.root',
+        'root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_fixed_123.root',
         schemaclass=NanoAODSchema,
     ).events()
     nevents_fixed = len(events_fixed.LHEWeight)
 
 
     events_reweighted = NanoEventsFactory.from_root(
-        'root://cmseos.fnal.gov//store/user/dspitzba/EFT/nanogen_123.root',
+        'root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_123.root',
         schemaclass=NanoAODSchema,
     ).events()
     nevents_reweighted = len(events_reweighted.LHEWeight)
