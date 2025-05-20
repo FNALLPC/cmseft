@@ -3,6 +3,11 @@
 This is a companion repository for CMS EFT workshop at LPC tutorial.
 The tutorial is aimed at graduate students and other researchers who are interested in including an EFT interpretation in their analysis.
 
+### A few caveats before we start
+For Run 3 samples el9 is not officially supported yet. These exercises were tested using el8.
+To run on el8 at the LPC, simply connect to `cmslpc-el8.fnal.gov`.
+If you are using lxplus, you can launch a singularity container using `cmssw-el8`.
+
 ## Setup
 
 All necessary ingredients are either included as part of this repository or
