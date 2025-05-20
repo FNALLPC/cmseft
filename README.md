@@ -4,9 +4,9 @@ This is a companion repository for CMS EFT workshop at LPC tutorial.
 The tutorial is aimed at graduate students and other researchers who are interested in including an EFT interpretation in their analysis.
 
 ### A few caveats before we start
-For Run 3 samples el9 is not officially supported yet. These exercises were tested using el8.
-To run on el8 at the LPC, simply connect to `cmslpc-el8.fnal.gov`.
-If you are using lxplus, you can launch a singularity container using `cmssw-el8`.
+For Run 3 samples el9 is not officially supported yet. These exercises were tested using el8.</br>
+To run on el8 at the LPC, simply connect to `cmslpc-el8.fnal.gov`.</br>
+If you are using LXPLUS, you can launch a singularity container using `cmssw-el8`.</br>
 Alteranatively, you can also so cc7/slc7 using sinularity with `cmssw-cc7`.
 
 ## Setup
@@ -14,7 +14,7 @@ Alteranatively, you can also so cc7/slc7 using sinularity with `cmssw-cc7`.
 All necessary ingredients are either included as part of this repository or
 available on `/cvmfs`.  Please feel free to use your favorite computing cluster
 interactive machine, e.g. [FNAL LPC](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml),
-[LXplus](https://abpcomputing.web.cern.ch/computing_resources/lxplus/), etc.
+[LXPLUS](https://abpcomputing.web.cern.ch/computing_resources/lxplus/), etc.
 
 To start, please clone this repository in a directory that has sufficient quota for the tutorial (at least 50GB),
 ```bash
