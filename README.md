@@ -79,7 +79,7 @@ Let's take a look at some diagrams
 
 To run locally,
 ```bash
-. gridpack_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
+./gridpack_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial
 ```
 
 <details>
