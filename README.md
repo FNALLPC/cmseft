@@ -18,7 +18,7 @@ interactive machine, e.g. [FNAL LPC](https://uscms.org/uscms_at_work/physics/com
 
 To start, please clone this repository in a directory that has sufficient quota for the tutorial (at least 50GB),
 ```bash
-git clone git@github.com:FNALLPC/cmseft.git
+git clone https://github.com/FNALLPC/cmseft.git
 ```
 
 ## Generation
