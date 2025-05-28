@@ -1,3 +1,4 @@
+set auto_convert_model T
 import model SMEFTsim_topU3l_MwScheme_UFO
 
 define p = g u c d s b u~ c~ d~ s~ b~
