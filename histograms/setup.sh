@@ -30,4 +30,4 @@ if [ ! -d dir_for_topcoffea ]; then
 fi
 
 # Get the example data file
-wget -nc http://www.crc.nd.edu/~kmohrman/files/root_files/for_tutorial/from_daniel/nanogen_small.root
+wget -nc http://uaf-10.t2.ucsd.edu/~kmohrman/large_files_no_backup/for_eft_tutorial/from_byates/nanogen_123.root
