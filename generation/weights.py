@@ -17,7 +17,7 @@ if __name__ == '__main__':
     import argparse
 
     argParser = argparse.ArgumentParser(description = "Argument parser")
-    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_123.root', help="Input file")
+    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_ctG_2_123.root', help="Input file")
     argParser.add_argument('--output', action='store', default='./weights.pdf', help="Output file")
     args = argParser.parse_args()
 

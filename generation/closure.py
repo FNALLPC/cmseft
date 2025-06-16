@@ -21,7 +21,7 @@ if __name__ == '__main__':
     args = argParser.parse_args()
 
     events_fixed = NanoEventsFactory.from_root(
-        'root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_fixed_123.root',
+        'root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_ctG_2_123.root',
         schemaclass=NanoAODSchema,
     ).events()
     nevents_fixed = len(events_fixed.LHEWeight)
@@ -39,11 +39,21 @@ if __name__ == '__main__':
         ht_axis,
         storage=hist.storage.Weight(),
     )
+    h = hist.Hist(
+        ht_axis,
+        storage=hist.storage.Weight(),
+    )
 
     h_reweighted.fill(
         ht=ak.sum(events_reweighted.GenJet.pt, axis=1),
         # NOTE We're filling with the actual MG weights so the error bars _will_ be correct in this case
-        weight=getattr(events_reweighted.LHEWeight, 'EFTrwgt10_ctGRe_2.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0'),
+        weight=getattr(events_reweighted.LHEWeight, 'EFTrwgt2_ctWRe_0.0_ctGRe_2.0_ctj8_0.0_ctq1_0.0_ctu1_0.0'),
+    )
+
+    h.fill(
+        ht=ak.sum(events_reweighted.GenJet.pt, axis=1),
+        # NOTE We're filling with the actual MG weights so the error bars _will_ be correct in this case
+        weight=getattr(events_reweighted.LHEWeight, 'EFTrwgt0_ctWRe_0.0_ctGRe_0.0_ctj8_0.0_ctq1_0.0_ctu1_0.0'),
     )
 
     h_fixed = hist.Hist(
@@ -64,10 +74,17 @@ if __name__ == '__main__':
     # Using the Run 3 COM and 2023 lumi
     hep.cms.label(label='', lumi='32.7', data=False, com=13.6)
 
-    h_fixed.plot1d(
+    hep.histplot(h_fixed,
         ax=ax,
         label=r'$C_{tG}=2 (fixed)$',
         density=True,
+    )
+    hep.histplot(h,
+        ax=ax,
+        label=r'SM',
+        density=True,
+        #yerr=False # NOTE be careful here, error bars on reweighted samples are not always accurate
+                    # (e.g., if you're using something like `histEFT` where the bin yields are computed on the fly)
     )
     hep.histplot(h_reweighted,
         ax=ax,
@@ -80,6 +97,10 @@ if __name__ == '__main__':
             h_fixed.values() / h_fixed.values(),
             bins=h_reweighted.axes[-1].edges,
             yerr=(np.sqrt(h_fixed.variances()) / h_fixed.values()),
+            ax=rax)
+    hep.histplot(
+            h.values() / h_fixed.values() * np.sum(h_fixed.values())/np.sum(h.values()),
+            bins=h.axes[-1].edges,
             ax=rax)
     hep.histplot(
             h_reweighted.values() / h_fixed.values() * np.sum(h_fixed.values())/np.sum(h_reweighted.values()),
