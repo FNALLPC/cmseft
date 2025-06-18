@@ -17,7 +17,7 @@ if __name__ == '__main__':
     import argparse
 
     argParser = argparse.ArgumentParser(description = "Argument parser")
-    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/dspitzba/EFT/nanogen_small.root', help="Input file")
+    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/byates1/EFT/nanogen_ctG_2_123.root', help="Input file")
     argParser.add_argument('--output', action='store', default='./weights.pdf', help="Output file")
     args = argParser.parse_args()
 
@@ -43,6 +43,8 @@ if __name__ == '__main__':
 
 
     fig, ax = plt.subplots()
+    # Using the Run 3 COM and 2023 lumi
+    hep.cms.label(label='', lumi='32.7', data=False, com=13.6)
 
     h_SM.plot1d(ax=ax, label=r'$C_{tG}=0$')
     h_ctg1.plot1d(ax=ax, label=r'$C_{tG}=1$')

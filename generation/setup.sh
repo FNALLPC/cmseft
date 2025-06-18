@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d genproductions ]; then
-  git clone https://github.com/danbarto/genproductions -b fix_patching --depth 1
+  git clone https://github.com/cms-sw/genproductions.git --depth 1
 fi
 
 # in case this is not already done, setup cms packaging commands
@@ -16,17 +16,17 @@ if [ ! -d CMSSW_13_0_14 ]; then
 
   git cms-addpkg PhysicsTools/NanoAOD
   cd PhysicsTools/NanoAOD/
-  git remote add eftfit https://github.com/danbarto/cmssw.git
+  git remote add eftfit https://github.com/bryates/cmssw.git
   git fetch eftfit
-
-  # these might not work yet
-  git cherry-pick ffba2640cf7d8da6b8b36559c64e90a2076153e9
-  git cherry-pick 416096620ec9d477caad74704c40d3d7d695e06a
-  git cherry-pick f9a76b864ebf40833f73b03778634b553aecfc98
-  git cherry-pick 48581ffb94b1957203160428745b69048a7ffc94
+  git cherry-pick 869fdb3011b1d864d3d85090ee4e22ea3fdb32f9
+  git cherry-pick 493da24362983cb78b0e9ad75f3cc6d824b54f5e
+  git cherry-pick 10e20e3b235870519b870e3c3cfb13f9b23148e2
+  git cherry-pick bb9ab6f1b1cf5e786437f3d2e482bf50404e0d50
 
   cd ../../
-  git clone https://github.com/danbarto/EFTGenReader.git
+  git clone https://github.com/TopEFT/EFTGenReader.git
+  rm -rf EFTGenReader/GenReader/
+  rm -rf EFTGenReader/LHEReader/
 
   mkdir -p Configuration/GenProduction/python/
   cp ../../fragments/pythia_fragment.py Configuration/GenProduction/python/

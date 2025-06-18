@@ -3,16 +3,22 @@
 This is a companion repository for CMS EFT workshop at LPC tutorial.
 The tutorial is aimed at graduate students and other researchers who are interested in including an EFT interpretation in their analysis.
 
+### A few caveats before we start
+For Run 3 samples el9 is not officially supported yet. These exercises were tested using el8.</br>
+To run on el8 at the LPC, simply connect to `cmslpc-el8.fnal.gov`.</br>
+If you are using LXPLUS, you can launch a singularity container using `cmssw-el8`.</br>
+Alteranatively, you can also so cc7/slc7 using sinularity with `cmssw-cc7`.
+
 ## Setup
 
 All necessary ingredients are either included as part of this repository or
 available on `/cvmfs`.  Please feel free to use your favorite computing cluster
 interactive machine, e.g. [FNAL LPC](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml),
-[LXplus](https://abpcomputing.web.cern.ch/computing_resources/lxplus/), etc.
+[LXPLUS](https://abpcomputing.web.cern.ch/computing_resources/lxplus/), etc.
 
 To start, please clone this repository in a directory that has sufficient quota for the tutorial (at least 50GB),
 ```bash
-git clone git@github.com:FNALLPC/cmseft.git
+git clone https://github.com/FNALLPC/cmseft.git
 ```
 
 ## Generation
@@ -67,8 +73,9 @@ Let's take a look at some diagrams
 ```bash
  cd $TUTORIALGEN/genproductions/bin/MadGraph5_aMCatNLO/
  eval `scram unsetenv -sh`
- ./diagram_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
+ . diagram_generation.sh TT01j_tutorial addons/models/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial/
 ```
+*Note*: On lxplus you'll see errors about `ps2pdf` since it is not installed. This means you will not get final PDF outputs.
 
 To run locally,
 ```bash
@@ -80,7 +87,7 @@ To run locally,
 Condor gridpack generation works for lxplus (and LPC?) but may not work at your local cluster, depending on your cluster's batch setup. You could use CMS connect as well (link)
   
 ```bash
-nohup ./submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial > TT01j_tutorial.log
+nohup . submit_cmsconnect_gridpack_generation.sh TT01j_tutorial addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j_tutorial > TT01j_tutorial.log &
 ```
 </details>
 
@@ -96,13 +103,13 @@ pushd CMSSW_13_0_14/src && cmsenv && popd
 
 Producing GEN files from the above gridpack is usually straight forward and similar to other CMS samples.
 We will use a fragment file that defines the settings that will be used for decays, parton shower and hadronization in pythia.
-For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz`.
+For convenience, the gridpack defined in the fragment points to a validated copy at `/eos/uscms/store/user/byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz`.
 
 You can change the path to the gridpack in the file in `cmseft/generation/CMSSW_13_0_14/src/Configuration/GenProduction/python/pythia_fragment.py`:
 
 ``` python
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/eos/uscms/store/user/dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz'),
+    args = cms.vstring('/eos/uscms/store/user/byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz'),
     nEvents = cms.untracked.uint32(5000),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
@@ -112,10 +119,10 @@ externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
 If you're not running this tutorial at the LPC you can replace the path to point to your gridpack, or copy the gridpack somewhere convienent using
 
 ``` bash
-xrdcp root://cmseos.fnal.gov//store/user//dspitzba/TT01j_tutorial_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz /A/B/C
+xrdcp root://cmseos.fnal.gov//store/user//byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz /A/B/C
 ```
 
-For creating a cmsRun config file make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
+For creating a cmsRun config file make sure you are in `cmseft2025/generation/` and have a CMSSW environment set.
 ``` bash
 cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
     --mc \
@@ -146,18 +153,18 @@ This is an important topic for any sample that is generated with additional part
 The qCut is set in the pythia fragment.
 A good starting point is around the xqcut that is being set in the MG run_card.dat.
 
-Several GEN files with different qcut values have been prepared in `/eos/uscms/store/user/dspitzba/EFT/qcut*.root*`.
+Several GEN files with different qcut values have been prepared in `/eos/uscms/store/user/byates1/EFT/qcut*.root`.
 You can look them up from anywhere with a grid certificate with
 
 ``` bash
-xrdfs root://cmseos.fnal.gov/ ls /store/user/dspitzba/EFT/
+xrdfs root://cmseos.fnal.gov/ ls /store/user/byates1/EFT/
 ```
 
 You can plot differential jet rate plots:
 
 ``` bash
 . setup_hist.sh
-python djr.py --input root://cmseos.fnal.gov//store/user/dspitzba/EFT/qcut30.root --output djr_qcut30.pdf
+python djr.py --input root://cmseos.fnal.gov//store/user/byates1/EFT/qcut30.root --output djr_qcut30.pdf
 ```
 
 </details>
@@ -170,7 +177,7 @@ The event content of the flat trees is similar to the generator infomration in N
 but much faster generation time because the detector simulation and reconstruction is being skipped.
 
 We will generate a few events directly from the gridpack created in the previous step (no intermediate GEN file is needed!), and use the same pythia fragment as in the GEN step before.
-Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set (e.g. run `. setup.sh` again to be sure).
+Make sure you are in `cmseft2025/generation/` and have a CMSSW environment set (e.g. run `. setup.sh` again to be sure).
 
 A cmsRun config file can be created 
 
@@ -249,7 +256,7 @@ python plotter.py histos.pkl.gz
 ### Saving templates for use with combine
 Before going to the next section, run
 ```bash
-./dump_templates.py histos.pkl.gz
+. dump_templates.py histos.pkl.gz
 ```
 which will write two files: `templates.root` and `scaling.pkl.gz` for use with the next section.
 
