@@ -122,7 +122,7 @@ If you're not running this tutorial at the LPC you can replace the path to point
 xrdcp root://cmseos.fnal.gov//store/user//byates1/TT01j_tutorial_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz /A/B/C
 ```
 
-For creating a cmsRun config file make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
+For creating a cmsRun config file make sure you are in `cmseft2025/generation/` and have a CMSSW environment set.
 ``` bash
 cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
     --mc \
@@ -177,7 +177,7 @@ The event content of the flat trees is similar to the generator infomration in N
 but much faster generation time because the detector simulation and reconstruction is being skipped.
 
 We will generate a few events directly from the gridpack created in the previous step (no intermediate GEN file is needed!), and use the same pythia fragment as in the GEN step before.
-Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set (e.g. run `. setup.sh` again to be sure).
+Make sure you are in `cmseft2025/generation/` and have a CMSSW environment set (e.g. run `. setup.sh` again to be sure).
 
 A cmsRun config file can be created 
 
