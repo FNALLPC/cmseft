@@ -18,7 +18,11 @@ def get_lumi(year):
         "2016APV": 19.52,
         "2016": 16.81,
         "2017": 41.48,
-        "2018": 59.83
+        "2018": 59.83,
+        "2022"    : 7.9804,
+        "2022EE"  : 26.6717,
+        "2023"    : 17.794,
+        "2023BPix": 9.451,
     }
     if year not in lumi_dict.keys():
         raise Exception(f"(ERROR: Unknown year \"{year}\".")

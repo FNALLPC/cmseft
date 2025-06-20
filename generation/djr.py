@@ -12,7 +12,7 @@ plt.style.use(hep.style.CMS)
 if __name__ == '__main__':
     '''
     good example:
-    root://cmseos.fnal.gov//store/user/dspitzba/EFT/qcut30.root
+    root://cmseos.fnal.gov//store/user/byates1/EFT/qcut30.root
 
     bad example:
     root://cmseos.fnal.gov//store/user/cmsdas/2023/short_exercises/Generators/wjets_2j/w2jets_qcut10.root
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     import argparse
 
     argParser = argparse.ArgumentParser(description = "Argument parser")
-    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/dspitzba/EFT/qcut80.root', help="Input file")
+    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/byates1/EFT/qcut30.root', help="Input file")
     argParser.add_argument('--output', action='store', default='./djr.pdf', help="Output file")
     argParser.add_argument('--nevents', action='store', default=50e3, help="Number of events generated")
     args = argParser.parse_args()
@@ -52,6 +52,9 @@ if __name__ == '__main__':
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
         fig, axs = plt.subplots(3,2, figsize=(15,21))
+        # Using the Run 3 COM and 2023 lumi
+        plt.sca(axs[0][0])
+        hep.cms.label(label='', lumi='32.7', data=False, com=13.6)
 
         for i in range(3):
             for j in range(2):
@@ -77,5 +80,6 @@ if __name__ == '__main__':
                         ncol=2,
                 )
 
+        plt.tight_layout()
         fig.savefig(args.output)
         print(f"Figure saved in {args.output}")

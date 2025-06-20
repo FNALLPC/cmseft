@@ -12,15 +12,11 @@ from topcoffea.modules import utils
 import topcoffea.modules.quad_fit_tools as qft
 
 LIM_DICT = {
-    "cHtbIm" : [-2,2],
-    "cHtbRe" : [-2,2],
-    "ctGIm"  : [-2,2], 
-    "cHt"    : [-2,2], 
-    "ctGRe"  : [-2,2], 
-    "ctWRe"  : [-2,2], 
-    "ctWIm"  : [-2,2], 
-    "ctBIm"  : [-2,2], 
-    "ctBRe"  : [-2,2],
+    "ctWRe" : [-2,2],
+    "ctGRe" : [-2,2],
+    "ctj8"  : [-2,2],
+    "ctq1"  : [-2,2],
+    "ctu1"  : [-2,2],
 }
 
 def main():
