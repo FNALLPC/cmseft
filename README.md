@@ -256,7 +256,7 @@ python plotter.py histos.pkl.gz
 ### Saving templates for use with combine
 Before going to the next section, run
 ```bash
-. dump_templates.py histos.pkl.gz
+python dump_templates.py histos.pkl.gz
 ```
 which will write two files: `templates.root` and `scaling.pkl.gz` for use with the next section.
 
