@@ -18,7 +18,7 @@ if [ -d ${JHUGENFOLDER} ]; then
     echo "${JHUGENFOLDER} already exists!"
 else
     wget "https://spin.pha.jhu.edu/Generator/${JHUGENFOLDER}.tar.gz"
-    tar -xf "${JHUGENFOLDER}.tar.gz"
+    tar -xvf "${JHUGENFOLDER}.tar.gz"
 fi
 
 cd "${JHUGENFOLDER}/JHUGenMELA/MELA/"
