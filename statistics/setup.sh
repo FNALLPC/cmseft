@@ -1,22 +1,21 @@
 #!/bin/bash
 
-# Install combine v9.2 (min version with interference model)
-if [ ! -d CMSSW_11_3_4 ]; then
-    cmsrel CMSSW_11_3_4
+# Install combine v10.2.1
+if [ ! -d CMSSW_14_1_0_pre4 ]; then
+    cmsrel CMSSW_14_1_0_pre4
 
-    pushd CMSSW_11_3_4/src
+    pushd CMSSW_14_1_0_pre4/src
     cmsenv
     
     git clone https://github.com/cms-analysis/HiggsAnalysis-CombinedLimit.git HiggsAnalysis/CombinedLimit
     pushd HiggsAnalysis/CombinedLimit
     git fetch origin
-    git checkout v9.2.1
+    git checkout v10.2.1
     popd
-    bash <(curl -s https://raw.githubusercontent.com/cms-analysis/CombineHarvester/main/CombineTools/scripts/sparse-checkout-https.sh)
 
     scramv1 b clean; scramv1 b # always make a clean build
     popd
 fi
 
 # ensure environment if running again
-pushd CMSSW_11_3_4/src && cmsenv && popd
+pushd CMSSW_14_1_0_pre4/src && cmsenv && popd
