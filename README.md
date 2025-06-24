@@ -303,33 +303,35 @@ which implements the [interferenceModel](https://cms-analysis.github.io/HiggsAna
 physics model in combine using the scaling data constructed at the end of the previous section.
 
 ### Running fits and scans
+Our list of WCs is `ctq1,ctu1,ctj8,ctGRe,ctWRe` We can freeze all but one and fit with, e.g. for `ctj8`:
+
 ```bash
-combine -M MultiDimFit workspace.root --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe \
-  --redefineSignalPOIs cHt,ctGRe --setParameters cHt=0,ctGRe=0 --algo singles
+combine -M MultiDimFit workspace.root --freezeParameters ctq1,ctu1,ctGRe,ctWRe \
+  --redefineSignalPOIs ctj8 --algo singles
 ```
 
-To perform a one-dimensional likelihood scan on cHt (freezing all other WC to 0), run
+To perform a one-dimensional likelihood scan on `ctj8` (freezing all other WC to 0), run
 ```bash
 combineTool.py workspace.root -M MultiDimFit --algo grid --points 10 \
-    --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe,ctGRe \
-    --redefineSignalPOIs cHt -n Scan1D.cHt
+    --freezeParameters ctq1,ctu1,ctGRe,ctWRe \
+    --redefineSignalPOIs ctj8 --setParameterRanges ctj8=-1,1 -n Scan1D.ctj8
 ```
 To plot the likelihood scan, run
 ```bash
-python plot1d.py -p cHt
+python3 plot1d.py -p ctj8
 ```
 An analogous set of commands can be used to generate 1D likelihood scans of the other WC.
 
-To perform a two-dimensional likelihood scan on cHt and ctGRe (freezing all other WC to 0), run
+To perform a two-dimensional likelihood scan on ctu1 and ctj8 (freezing all other WC to 0), run
 ```bash
 combineTool.py workspace.root -M MultiDimFit --algo grid --points 100 \
-    --freezeParameters cHtbIm,cHtbRe,ctGIm,ctWRe,ctWIm,ctBIm,ctBRe \
-    --redefineSignalPOIs cHt,ctGRe -n Scan2D.cHt.ctGRe \
-    --setParameterRanges cHt=-40,30:ctGRe=-1,1
+    --freezeParameters ctq1,ctGRe,ctWRe \
+    --redefineSignalPOIs ctu1,ctj8 -n Scan2D.ctu1.ctj8 \
+    --setParameterRanges ctu1=-1,1:ctj8=-1,1
 ```
 To plot the 2D likelihood scan, run
 ```bash
-python plot2d.py -p cHt,ctGRe
+python3 plot2d.py -p ctu1,ctj8
 ```
 Again, analogous commands can be used to generate the 2D likelihood scan for other combinations of WC.
 
@@ -352,26 +354,22 @@ Attaching file robustHesseTest.root as _file0...
 root [1] TMatrixDSymEigen eig(*hessian);
 root [2] eig.GetEigenValues().Print()
 
-Vector (16)  is as follows
+Vector (12)  is as follows
 
      |        1  |
 ------------------
-   0 |0.838318
-   1 |0.573909
-   2 |0.380058
-   3 |0.263561
-   4 |0.221969
-   5 |0.19812
-   6 |0.196478
-   7 |0.195322
-   8 |0.0850279
-   9 |0.0776739
-  10 |0.0650077
-  11 |0.040883
-  12 |0.0227485
-  13 |0.00564541
-  14 |0.00187942
-  15 |0.00125546
+   0 |0.630579
+   1 |0.401833
+   2 |0.203512
+   3 |0.199042
+   4 |0.195313
+   5 |0.195313
+   6 |0.195313
+   7 |0.195313
+   8 |0.0798812
+   9 |0.0663858
+  10 |0.00812809
+  11 |0.0040377
 ```
 but this includes both the POIs as well as the BB-lite nuisance parameters. We need to get the _profile hessian_ to know what the POIs constraint is.
 
@@ -380,6 +378,14 @@ To solve this, we use the `rotate.py` routine:
 python3 rotate.py --hesse robustHesse.WCbasis.root --scalingIn scaling.pkl.gz  --scaleByEigenvalue
 text2workspace.py signal_region_card.txt --X-allow-no-background -P HiggsAnalysis.CombinedLimit.InterferenceModels:interferenceModel \
   --PO verbose --PO scalingData=rotated_scaling.pkl.gz -o workspace_rotated.root
+```
+which gives two eigendirections above threshold. Let's plot them!
+```bash
+combineTool.py workspace_rotated.root -M MultiDimFit --algo grid --points 100 \
+    --freezeParameters ctq1 \
+    --redefineSignalPOIs EV0,EV1 -n Scan2D.EV0.EV1 \
+    --setParameterRanges EV0=-1,1:EV1=-0.1,0.1
+python3 plot2d.py -p EV0,EV1
 ```
 
 ## Matrix Elements
