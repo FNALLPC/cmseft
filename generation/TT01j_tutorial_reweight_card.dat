@@ -5,608 +5,191 @@ change rwgt_dir rwgt
 
 launch --rwgt_name=dummy
 
-launch --rwgt_name=EFTrwgt0_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt0_ctWRe_0.0_ctGRe_0.0_ctj8_0.0_ctj1_0.0_ctu1_0.0
+set ctWRe 0.0
+set ctGRe 0.0
+set ctj8 0.0
+set ctj1 0.0
+set ctu1 0.0
 
-launch --rwgt_name=EFTrwgt1_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt1_ctWRe_-3.3676922890114644_ctGRe_-1.4536969917800022_ctj8_12.22089119100805_ctj1_3.7286906646161846_ctu1_-14.38607805933404
+set ctWRe -3.3676922890114644
+set ctGRe -1.4536969917800022
+set ctj8 12.22089119100805
+set ctj1 3.7286906646161846
+set ctu1 -14.38607805933404
 
-launch --rwgt_name=EFTrwgt2_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt2_ctWRe_0.0_ctGRe_2.0_ctj8_0.0_ctj1_0.0_ctu1_0.0
+set ctWRe 0.0
+set ctGRe 2.0
+set ctj8 0.0
+set ctj1 0.0
+set ctu1 0.0
 
-launch --rwgt_name=EFTrwgt3_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt3_ctWRe_-0.3747161682480602_ctGRe_-0.5947779777262008_ctj8_23.017712416387873_ctj1_8.674497737848828_ctu1_-4.798610581042654
+set ctWRe -0.3747161682480602
+set ctGRe -0.5947779777262008
+set ctj8 23.017712416387873
+set ctj1 8.674497737848828
+set ctu1 -4.798610581042654
 
-launch --rwgt_name=EFTrwgt4_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt4_ctWRe_-0.09245549583979074_ctGRe_0.7796045648810845_ctj8_-19.583051383885103_ctj1_9.848816076204397_ctu1_13.203435749391591
+set ctWRe -0.09245549583979074
+set ctGRe 0.7796045648810845
+set ctj8 -19.583051383885103
+set ctj1 9.848816076204397
+set ctu1 13.203435749391591
 
-launch --rwgt_name=EFTrwgt5_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt5_ctWRe_-3.160021212572515_ctGRe_0.48428917415853867_ctj8_18.440475062284648_ctj1_14.191876262680708_ctu1_-15.554254478047966
+set ctWRe -3.160021212572515
+set ctGRe 0.48428917415853867
+set ctj8 18.440475062284648
+set ctj1 14.191876262680708
+set ctu1 -15.554254478047966
 
-launch --rwgt_name=EFTrwgt6_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt6_ctWRe_1.07221735759145_ctGRe_-1.668836613688443_ctj8_-0.37344175878031294_ctj1_2.433669313736793_ctu1_-15.809146616939003
+set ctWRe 1.07221735759145
+set ctGRe -1.668836613688443
+set ctj8 -0.37344175878031294
+set ctj1 2.433669313736793
+set ctu1 -15.809146616939003
 
-launch --rwgt_name=EFTrwgt7_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt7_ctWRe_3.617703160263911_ctGRe_-0.16135624836699858_ctj8_-2.8266427232517906_ctj1_-7.938771485560813_ctu1_-7.93653047257526
+set ctWRe 3.617703160263911
+set ctGRe -0.16135624836699858
+set ctj8 -2.8266427232517906
+set ctj1 -7.938771485560813
+set ctu1 -7.93653047257526
 
-launch --rwgt_name=EFTrwgt8_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt8_ctWRe_1.104315230536181_ctGRe_1.3943340034785643_ctj8_17.06152123154841_ctj1_-0.6662697384182703_ctu1_-7.141871023044926
+set ctWRe 1.104315230536181
+set ctGRe 1.3943340034785643
+set ctj8 17.06152123154841
+set ctj1 -0.6662697384182703
+set ctu1 -7.141871023044926
 
-launch --rwgt_name=EFTrwgt9_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
+launch --rwgt_name=EFTrwgt9_ctWRe_-1.312259681275981_ctGRe_-0.09555862818693939_ctj8_21.56647180467686_ctj1_0.3762589116703303_ctu1_-4.318523154875509
+set ctWRe -1.312259681275981
+set ctGRe -0.09555862818693939
+set ctj8 21.56647180467686
+set ctj1 0.3762589116703303
+set ctu1 -4.318523154875509
 
-launch --rwgt_name=EFTrwgt10_ctGRe_2.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 2.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt10_ctWRe_-0.937125465757501_ctGRe_-1.9017244442828805_ctj8_17.241950213632265_ctj1_13.470839039971832_ctu1_12.900438395747859
+set ctWRe -0.937125465757501
+set ctGRe -1.9017244442828805
+set ctj8 17.241950213632265
+set ctj1 13.470839039971832
+set ctu1 12.900438395747859
 
-launch --rwgt_name=EFTrwgt11_ctGRe_1.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt11_ctWRe_3.0127332565806197_ctGRe_0.7384519330942001_ctj8_-22.533824251762063_ctj1_-12.150256419221584_ctu1_-14.711844126958804
+set ctWRe 3.0127332565806197
+set ctGRe 0.7384519330942001
+set ctj8 -22.533824251762063
+set ctj1 -12.150256419221584
+set ctu1 -14.711844126958804
 
-launch --rwgt_name=EFTrwgt12_ctGRe_1.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt12_ctWRe_-3.5630239231767202_ctGRe_-2.178626891134292_ctj8_-20.23321078980382_ctj1_1.0076136017010562_ctu1_9.786444255444923
+set ctWRe -3.5630239231767202
+set ctGRe -2.178626891134292
+set ctj8 -20.23321078980382
+set ctj1 1.0076136017010562
+set ctu1 9.786444255444923
 
-launch --rwgt_name=EFTrwgt13_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt13_ctWRe_2.1393794552531515_ctGRe_-0.4845667812696184_ctj8_1.7195569175251961_ctj1_-5.404839210464521_ctu1_12.936468912009932
+set ctWRe 2.1393794552531515
+set ctGRe -0.4845667812696184
+set ctj8 1.7195569175251961
+set ctj1 -5.404839210464521
+set ctu1 12.936468912009932
 
-launch --rwgt_name=EFTrwgt14_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt14_ctWRe_3.4196019264050523_ctGRe_-1.214405001881057_ctj8_8.81394660441402_ctj1_0.5686983514044677_ctu1_2.4476841912825975
+set ctWRe 3.4196019264050523
+set ctGRe -1.214405001881057
+set ctj8 8.81394660441402
+set ctj1 0.5686983514044677
+set ctu1 2.4476841912825975
 
-launch --rwgt_name=EFTrwgt15_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt15_ctWRe_3.1990321770618015_ctGRe_1.4585113037955493_ctj8_3.6640299514906296_ctj1_-3.132049114381772_ctu1_14.441268977781629
+set ctWRe 3.1990321770618015
+set ctGRe 1.4585113037955493
+set ctj8 3.6640299514906296
+set ctj1 -3.132049114381772
+set ctu1 14.441268977781629
 
-launch --rwgt_name=EFTrwgt16_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt16_ctWRe_2.0092673810273265_ctGRe_-1.8616186887457618_ctj8_17.01047344896054_ctj1_-1.7120552076432531_ctu1_-17.585247340639988
+set ctWRe 2.0092673810273265
+set ctGRe -1.8616186887457618
+set ctj8 17.01047344896054
+set ctj1 -1.7120552076432531
+set ctu1 -17.585247340639988
 
-launch --rwgt_name=EFTrwgt17_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt17_ctWRe_1.9379960433102204_ctGRe_1.3060725607868435_ctj8_-10.956307176920204_ctj1_-2.6702899281826475_ctu1_-9.38765055298211
+set ctWRe 1.9379960433102204
+set ctGRe 1.3060725607868435
+set ctj8 -10.956307176920204
+set ctj1 -2.6702899281826475
+set ctu1 -9.38765055298211
 
-launch --rwgt_name=EFTrwgt18_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 1.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
+launch --rwgt_name=EFTrwgt18_ctWRe_0.7176195529493965_ctGRe_0.5830712367971578_ctj8_12.830933029901914_ctj1_13.180054487103373_ctu1_-3.5731207309518123
+set ctWRe 0.7176195529493965
+set ctGRe 0.5830712367971578
+set ctj8 12.830933029901914
+set ctj1 13.180054487103373
+set ctu1 -3.5731207309518123
 
-launch --rwgt_name=EFTrwgt19_ctGRe_0.0_ctGIm_2.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 2.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt19_ctWRe_-1.0302851152815298_ctGRe_2.034406643498849_ctj8_-22.653478001957915_ctj1_3.0123116447474914_ctu1_-9.324036758179815
+set ctWRe -1.0302851152815298
+set ctGRe 2.034406643498849
+set ctj8 -22.653478001957915
+set ctj1 3.0123116447474914
+set ctu1 -9.324036758179815
 
-launch --rwgt_name=EFTrwgt20_ctGRe_0.0_ctGIm_1.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt20_ctWRe_-4.305899054119071_ctGRe_-1.145655420693825_ctj8_4.4520113653412885_ctj1_-15.207928725838503_ctu1_4.077357335450266
+set ctWRe -4.305899054119071
+set ctGRe -1.145655420693825
+set ctj8 4.4520113653412885
+set ctj1 -15.207928725838503
+set ctu1 4.077357335450266
 
-launch --rwgt_name=EFTrwgt21_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt21_ctWRe_-2.765926860173213_ctGRe_-2.3192277376849053_ctj8_-12.294212292906247_ctj1_4.165062358201343_ctu1_-4.583279969600234
+set ctWRe -2.765926860173213
+set ctGRe -2.3192277376849053
+set ctj8 -12.294212292906247
+set ctj1 4.165062358201343
+set ctu1 -4.583279969600234
 
-launch --rwgt_name=EFTrwgt22_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt22_ctWRe_-2.6417237901688533_ctGRe_-0.30578256055383335_ctj8_-3.1198578753771145_ctj1_13.574789539949723_ctu1_19.07397478837545
+set ctWRe -2.6417237901688533
+set ctGRe -0.30578256055383335
+set ctj8 -3.1198578753771145
+set ctj1 13.574789539949723
+set ctu1 19.07397478837545
 
-launch --rwgt_name=EFTrwgt23_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt23_ctWRe_1.7204387650318704_ctGRe_-2.4726667951223718_ctj8_0.375299883033378_ctj1_-15.218370448623121_ctu1_16.98634420141406
+set ctWRe 1.7204387650318704
+set ctGRe -2.4726667951223718
+set ctj8 0.375299883033378
+set ctj1 -15.218370448623121
+set ctu1 16.98634420141406
 
-launch --rwgt_name=EFTrwgt24_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt24_ctWRe_-0.3235054627442464_ctGRe_1.3856323412146243_ctj8_9.92978719013702_ctj1_5.971774343330768_ctu1_1.0907516008814184
+set ctWRe -0.3235054627442464
+set ctGRe 1.3856323412146243
+set ctj8 9.92978719013702
+set ctj1 5.971774343330768
+set ctu1 1.0907516008814184
 
-launch --rwgt_name=EFTrwgt25_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
+launch --rwgt_name=EFTrwgt25_ctWRe_4.175101474931372_ctGRe_-0.5220035552894979_ctj8_11.696819678177803_ctj1_13.720500134517675_ctu1_2.376999354160052
+set ctWRe 4.175101474931372
+set ctGRe -0.5220035552894979
+set ctj8 11.696819678177803
+set ctj1 13.720500134517675
+set ctu1 2.376999354160052
 
-launch --rwgt_name=EFTrwgt26_ctGRe_0.0_ctGIm_1.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 1.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt27_ctGRe_0.0_ctGIm_0.0_ctWRe_2.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 2.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt28_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt29_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt30_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt31_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt32_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt33_ctGRe_0.0_ctGIm_0.0_ctWRe_1.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 1.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt34_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_2.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 2.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt35_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt36_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt37_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt38_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt39_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_1.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 1.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt40_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_2.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 2.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt41_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt42_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt43_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt44_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_1.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 1.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt45_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_2.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 2.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt46_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_1.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt47_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt48_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_1.0_cHtbRe_0.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 1.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt49_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_2.0_cHtbIm_0.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 2.000000
-set cHtbIm 0.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt50_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_1.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 1.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt51_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_1.0_cHtbIm_0.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 1.000000
-set cHtbIm 0.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt52_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_2.0_cHt_0.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 2.000000
-set cHt 0.000000
-
-launch --rwgt_name=EFTrwgt53_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_1.0_cHt_1.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 1.000000
-set cHt 1.000000
-
-launch --rwgt_name=EFTrwgt54_ctGRe_0.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_2.0
-set ctGRe 0.000000
-set ctGIm 0.000000
-set ctWRe 0.000000
-set ctWIm 0.000000
-set ctBRe 0.000000
-set ctBIm 0.000000
-set cHtbRe 0.000000
-set cHtbIm 0.000000
-set cHt 2.000000
-
+launch --rwgt_name=EFTrwgt26_ctWRe_2.443766150951581_ctGRe_-1.1240334077574292_ctj8_-0.5917251941395101_ctj1_-3.61486148778466_ctu1_-9.644101470074746
+set ctWRe 2.443766150951581
+set ctGRe -1.1240334077574292
+set ctj8 -0.5917251941395101
+set ctj1 -3.61486148778466
+set ctu1 -9.644101470074746
