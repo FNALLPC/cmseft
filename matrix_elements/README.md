@@ -1,6 +1,3 @@
-# EFT Workshop 2025 Re-weighting Tutorial
-
-This is the folder for the re-weighting tutorial using JHUGen-MELA.
 
 ## Setup
 
@@ -28,4 +25,15 @@ From there, navigate to this folder, and run the following:
 ```bash
 jupyter notebook --no-browser --port 8888
 ```
+
+## FAQ
+
+Q: My port isn't forwarding!
+A: The port is probably already in use. Try again
+
+Q: My MELA is stuck on a loading screen!
+A: Check your symbolic links to see if they match to something by calling `ls -l`. If they don't wipe them away and try again.
+
+Q: My MELA is stuck on calculations!
+A: Try just re-initializing your MELA object. If that doesn't work, contact me!
 
