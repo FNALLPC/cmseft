@@ -4,9 +4,9 @@ This is a companion repository for CMS EFT workshop at LPC tutorial.
 The tutorial is aimed at graduate students and other researchers who are interested in including an EFT interpretation in their analysis.
 
 ### A few caveats before we start
-For Run 3 samples el9 is not officially supported yet. These exercises were tested using el8.</br>
-To run on el8 at the LPC, simply connect to `cmslpc-el8.fnal.gov`.</br>
-If you are using LXPLUS, you can launch a singularity container using `cmssw-el8`.</br>
+For Run 3 samples el9 is not officially supported yet. These exercises were tested using el8, with the exception of the MELA tutorial, which is testing utilizing el9.</br>
+To run on el8 at the LPC, simply connect to `cmslpc-el8.fnal.gov`, replacing `el8` with `el9` if you would like to use el9.</br>
+If you are using LXPLUS, you can launch a singularity container using `cmssw-el8`, or use the default to use el9.</br>
 Alteranatively, you can also so cc7/slc7 using sinularity with `cmssw-cc7`.
 
 ## Setup
@@ -388,3 +388,6 @@ python3 rotate.py --hesse robustHesse.WCbasis.root --scalingIn scaling.pkl.gz  -
 text2workspace.py signal_region_card.txt --X-allow-no-background -P HiggsAnalysis.CombinedLimit.InterferenceModels:interferenceModel \
   --PO verbose --PO scalingData=rotated_scaling.pkl.gz -o workspace_rotated.root
 ```
+
+## Matrix Elements
+

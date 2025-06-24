@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+export SCRAM_ARCH=el9_amd64_gcc12
 unset PYTHONPATH # To avoid conflicts 
 JHUGENFOLDER="JHUGenerator.v7.5.7"
 
