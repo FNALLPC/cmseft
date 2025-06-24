@@ -280,13 +280,6 @@ To start, from the main area of this repository, run
 cd statistics
 ```
 
-Start up the singularity container for CMSSW with CentOS7:
-```bash
-cmssw-el7 --bind `readlink -f ${HOME}/nobackup/` --bind /cvmfs
-```
-
-If you are running on cmslpc, the nobackup directory will now be mounted under its true path (not the link nobackup). You will need to return to the statistics directory.
-
 Set up CMSSW and combine by running
 ```bash
 . setup.sh
